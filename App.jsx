@@ -1,0 +1,273 @@
+
+import React, { useState } from 'react';
+
+export default function App() {
+  const [activeAvenue, setActiveAvenue] = useState('All');
+
+  const projectsData = [
+    {
+      title: "SPLISH SPLASH",
+      description: "Providing clean water infrastructure, filtering units, and structural renovations to schools lacking essential sanitary resources.",
+      avenue: "Community Service",
+      tag: "Infrastructure",
+      gradient: "from-[#7A0016] to-red-950"
+    },
+    {
+      title: "HOPE",
+      description: "A critical long-standing annual campaign offering clinical supplies, pediatric resources, and direct infrastructure relief to healthcare units.",
+      avenue: "Community Service",
+      tag: "Healthcare",
+      gradient: "from-amber-800 to-[#7A0016]"
+    },
+    {
+      title: "RHETORIK",
+      description: "The prominent premier inter-school public speaking championship fostering communication masters across the district.",
+      avenue: "Club Service",
+      tag: "Oratory",
+      gradient: "from-slate-800 to-slate-950"
+    },
+    {
+      title: "INTERCON",
+      description: "Internal sports encounters, ice-breaking programs, and leadership training camps designed to solidify member chemistry.",
+      avenue: "Club Service",
+      tag: "Bonding",
+      gradient: "from-blue-900 to-slate-950"
+    },
+    {
+      title: "ECO ACTION",
+      description: "Massive coastal cleanups, tree planting campaigns, and electronic waste recycling drives to build sustainability.",
+      avenue: "Green Life",
+      tag: "Environment",
+      gradient: "from-emerald-800 to-teal-950"
+    },
+    {
+      title: "GLOBAL BOUNDS",
+      description: "Cultural identity exchanges and collaborative international service missions executed with global twin clubs.",
+      avenue: "International Understanding",
+      tag: "Global",
+      gradient: "from-indigo-900 to-slate-950"
+    },
+    {
+      title: "RACE FOR CHANGE",
+      description: "The signature flagship fundraising walkathon and carnival driving massive socio-economic project financing.",
+      avenue: "Finance",
+      tag: "Fundraiser",
+      gradient: "from-amber-600 to-stone-900"
+    },
+    {
+      title: "VOICE OF ANANDA",
+      description: "A specialized visual digital content framework and storytelling platform amplifying youth community service impact.",
+      avenue: "Public Relations (PR)",
+      tag: "Media",
+      gradient: "from-pink-900 to-purple-950"
+    }
+  ];
+
+  const filteredProjects = activeAvenue === 'All' 
+    ? projectsData 
+    : projectsData.filter(proj => proj.avenue === activeAvenue);
+
+  return (
+    <div className="bg-slate-900 text-white min-h-screen font-sans selection:bg-[#FFCC00] selection:text-[#7A0016] scroll-smooth">
+      
+      {/* Navigation */}
+      <nav className="flex justify-between items-center px-6 md:px-12 py-4 border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
+        <div className="flex items-center space-x-3">
+          <img 
+            src="/images/logo.png" 
+            alt="ICAC Logo" 
+            className="w-10 h-10 object-contain rounded-full border border-[#FFCC00]/40 shadow-md"
+            onError={(e) => { e.target.style.display = 'none'; }}
+          />
+          <span className="font-bold text-base md:text-lg tracking-wide hidden sm:inline">Interact Club of Ananda College</span>
+        </div>
+        <div className="hidden md:flex space-x-8 text-sm font-semibold tracking-wide text-slate-300">
+          <a href="#about" className="hover:text-[#FFCC00] transition">About</a>
+          <a href="#avenues" className="hover:text-[#FFCC00] transition">Avenues</a>
+          <a href="#projects" className="hover:text-[#FFCC00] transition">Projects</a>
+          <a href="#board" className="hover:text-[#FFCC00] transition">Roster</a>
+        </div>
+        <button className="bg-[#7A0016] hover:bg-red-800 text-white px-5 py-2 rounded-full font-bold text-xs md:text-sm shadow-md border border-[#FFCC00]/30 transition-all active:scale-95 cursor-pointer">
+          Register for R4C
+        </button>
+      </nav>
+
+      {/* Hero */}
+      <header id="about" className="relative flex flex-col items-center justify-center text-center px-4 py-20 md:py-28 bg-gradient-to-b from-slate-950 to-slate-900 overflow-hidden">
+        <span className="text-[#FFCC00] uppercase tracking-[0.25em] font-black text-xs mb-6 bg-[#7A0016]/40 px-4 py-1.5 rounded-full border border-[#7A0016]/60">
+          Interact District 3220
+        </span>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight max-w-5xl mb-6 leading-[1.15]">
+          An Unparalleled Legacy of <br className="hidden md:inline" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFCC00] via-amber-400 to-[#FFCC00]">Leadership & Service</span>
+        </h1>
+        <p className="text-slate-400 text-base md:text-xl max-w-2xl text-balance mb-10 font-normal leading-relaxed">
+          "Inspiring change through action." Meet the leadership driving our historic operations forward.
+        </p>
+      </header>
+
+      {/* Avenues Tab Bar */}
+      <section id="avenues" className="py-12 bg-slate-950/40 border-t border-slate-800/60">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-black tracking-tight mb-2">Our Operational Pillars</h2>
+            <p className="text-slate-400 text-sm max-w-xl mx-auto">Select an Avenue below to see its active flagship initiatives updates.</p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+            {['All', 'Community Service', 'Club Service', 'Green Life', 'International Understanding', 'Finance', 'Public Relations (PR)'].map((ave) => (
+              <button
+                key={ave}
+                onClick={() => setActiveAvenue(ave)}
+                className={`px-4 py-2 rounded-xl font-bold text-xs md:text-sm border transition-all cursor-pointer ${
+                  activeAvenue === ave 
+                    ? 'bg-[#7A0016] text-white border-[#FFCC00]/50 shadow-md scale-105' 
+                    : 'bg-slate-900 text-slate-400 border-slate-800 hover:border-slate-700'
+                }`}
+              >
+                {ave}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* 4. Dynamic Interactive Projects Showcase */}
+      <section id="projects" className="py-16 bg-slate-900 border-t border-slate-800/50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
+            <div>
+              <h2 className="text-2xl md:text-4xl font-black tracking-tight mb-2">
+                Showing {activeAvenue === 'All' ? 'All Flagship' : activeAvenue} Projects
+              </h2>
+              <p className="text-slate-400 text-sm">
+                Displaying {filteredProjects.length} active initiatives under this selection.
+              </p>
+            </div>
+            {activeAvenue !== 'All' && (
+              <button 
+                onClick={() => setActiveAvenue('All')}
+                className="mt-4 md:mt-0 text-xs font-bold text-[#FFCC00] bg-[#7A0016]/20 border border-[#7A0016]/40 px-4 py-2 rounded-lg hover:bg-[#7A0016]/40 transition cursor-pointer"
+              >
+                Clear Filter ×
+              </button>
+            )}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredProjects.map((project, idx) => (
+              <div 
+                key={idx} 
+                className="bg-slate-950 border border-slate-800/80 rounded-2xl overflow-hidden hover:border-slate-700/60 shadow-md transition-all flex flex-col group"
+              >
+                <div className={`h-40 bg-gradient-to-tr ${project.gradient} flex items-center justify-center relative p-4 shrink-0`}>
+                  <span className="absolute bottom-3 left-3 bg-slate-900/90 backdrop-blur text-[#FFCC00] text-[10px] font-black tracking-wider uppercase px-2.5 py-1 rounded-md border border-slate-700">
+                    {project.tag}
+                  </span>
+                  <span className="text-white font-black text-xl tracking-wider text-center group-hover:scale-105 transition-transform">
+                    {project.title}
+                  </span>
+                </div>
+                <div className="p-5 flex flex-col justify-between h-full">
+                  <div>
+                    <span className="text-[11px] font-bold text-[#FFCC00]/80 tracking-wide uppercase block mb-1">
+                      {project.avenue}
+                    </span>
+                    <p className="text-slate-400 text-xs md:text-sm leading-relaxed">
+                      {project.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Executive Committee */}
+      <section id="board" className="py-20 bg-slate-950/40 border-t border-slate-800/60">
+        <div className="max-w-6xl mx-auto px-6">
+          
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4">Executive Committee</h2>
+            <p className="text-slate-400 max-w-xl mx-auto text-sm">The primary pillars running core operations and executive strategy for ICAC.</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
+            {[
+              { name: "Int. Kemith Rajapakse", role: "President", img: "/images/president.jpg", highlight: true },
+              { name: "Int. Gagul Jayawardena", role: "Secretary", img: "/images/secretary.jpg" },
+              { name: "Int. Nathan Malwana", role: "Treasurer", img: "/images/treasurer.jpg" },
+              { name: "Int. Nethuka Dahanayaka", role: "Vice President", img: "/images/vicepresident1.jpg" },
+              { name: "Int. Yasith Wickramasinghe", role: "Vice President", img: "/images/vicepresident2.jpg" },
+              { name: "Int. Sesath Cabbral", role: "Assistant Secretary", img: "/images/assistantsecretary.jpg" },
+              { name: "Int. Nilush Liyanage", role: "Assistant Treasurer", img: "/images/assistanttreasurer.jpg" },
+              { name: "Int. Nethula Edirimanne", role: "Sergeant at Arms", img: "/images/sergeantatarms1.jpg" },
+              { name: "Int. Hiruja Wanniarachchi", role: "Sergeant at Arms", img: "/images/sergeantatarms2.jpg" },
+              { name: "Int. Kaviru Thineth", role: "Editor", img: "/images/editor.jpg" },
+              { name: "Int. Ronal Jayarathna", role: "Head of Directors", img: "/images/headofdirectors.jpg" }
+            ].map((member, i) => (
+              <div key={i} className={`p-6 rounded-2xl border text-center transition-all ${
+                member.highlight 
+                  ? 'bg-slate-900 border-[#7A0016] shadow-lg shadow-[#7A0016]/10' 
+                  : 'bg-slate-900/60 border-slate-800/80 hover:border-slate-700'
+              }`}>
+                <img 
+                  src={member.img} 
+                  alt={member.name} 
+                  className={`w-24 h-24 rounded-full mx-auto mb-4 object-cover border ${
+                    member.highlight ? 'border-[#FFCC00]/60 shadow-md' : 'border-slate-700'
+                  }`}
+                  onError={(e) => { e.target.src = "https://unsplash.com"; }}
+                />
+                <h4 className="font-bold text-base text-slate-100">{member.name}</h4>
+                <p className={`text-xs font-bold tracking-wider uppercase mt-1.5 ${
+                  member.highlight ? 'text-[#FFCC00]' : 'text-slate-400'
+                }`}>{member.role}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Director Board */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-4">Director Board</h2>
+            <p className="text-slate-400 max-w-xl mx-auto text-sm">Avenue managers engineering targeted local and international projects.</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { name: "Int. Gayanuka Fernando", role: "Director of Finance", img: "/images/dir_finance.jpg" },
+              { name: "Int. Thinura Jayasinghe", role: "Co-Director of Community Service", img: "/images/dir_community1.jpg" },
+              { name: "Int. Chithila Wanniarachchi", role: "Co-Director of Community Service", img: "/images/dir_community2.jpg" },
+              { name: "Int. Susith Gallage", role: "Co-Director of Club Service", img: "/images/dir_club1.jpg" },
+              { name: "Int. Binul De Silva", role: "Co-Director of Club Service", img: "/images/dir_club2.jpg" },
+              { name: "Int. Javinu Sewhas", role: "Co-Director of Greenlife", img: "/images/dir_greenlife1.jpg" },
+              { name: "Int. Sanuth Dulwan", role: "Co-Director of Greenlife", img: "/images/dir_greenlife2.jpg" },
+              { name: "Int. Damsas Jayasinghe", role: "Co-Director of International Understanding", img: "/images/dir_iu1.jpg" },
+              { name: "Int. Onitha Thilakarathne", role: "Co-Director of International Understanding", img: "/images/dir_iu2.jpg" },
+              { name: "Int. Binara Supun", role: "Co-Director of Public Relations", img: "/images/dir_pr1.jpg" },
+              { name: "Int. Ahas Karunaratne", role: "Co-Director of Public Relations", img: "/images/dir_pr2.jpg" }
+            ].map((dir, i) => (
+              <div key={i} className="bg-slate-900/40 border border-slate-800/80 p-5 rounded-xl flex items-center space-x-4 hover:border-slate-700 transition">
+                <img 
+                  src={dir.img} 
+                  alt={dir.name} 
+                  className="w-14 h-14 rounded-full object-cover border border-slate-700 bg-slate-800 shrink-0" 
+                  onError={(e) => { e.target.src = "https://unsplash.com"; }}
+                />
+                <div>
+                  <h5 className="font-bold text-sm text-slate-200">{dir.name}</h5>
+                  <p className="text-[11px] text-[#FFCC00]/80 font-semibold uppercase tracking-wider mt-0.5">{dir.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 6. Footer */}
+      <footer className="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500 font-medium">
+        &copy; {new Date().getFullYear()} Interact Club of Ananda College. All Rights Reserved.
+      </footer>
+    </div>
+  );
+}
