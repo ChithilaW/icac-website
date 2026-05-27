@@ -4,283 +4,260 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Interact Club of Ananda College</title>
-  <!-- Tailwind CSS Framework CDN -->
+  <!-- Tailwind CSS Live CDN Framework Injection -->
   <script src="https://tailwindcss.com"></script>
-  <!-- React Production Framework Dependencies -->
-  <script src="https://unpkg.com" crossorigin></script>
-  <script src="https://unpkg.com" crossorigin></script>
-  <!-- Babel Compiler to process layouts natively inside the browser -->
-  <script src="https://unpkg.com"></script>
 </head>
-<body>
-  <div id="root"></div>
+<body class="bg-slate-900 text-white min-h-screen font-sans selection:bg-[#FFCC00] selection:text-[#7A0016] scroll-smooth">
 
-  <script type="text/babel">
-    const { useState } = React;
+  {/* Navigation */}
+  <nav class="flex justify-between items-center px-6 md:px-12 py-4 border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 bg-[#7A0016] rounded-full flex items-center justify-center font-black text-white tracking-wider border border-[#FFCC00]/40 shadow-md">ICAC</div>
+      <span class="font-bold text-base md:text-lg tracking-wide hidden sm:inline">Interact Club of Ananda College</span>
+    </div>
+    <div class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide text-slate-300">
+      <a href="#about" class="hover:text-[#FFCC00] transition">About</a>
+      <a href="#avenues" class="hover:text-[#FFCC00] transition">Avenues</a>
+      <a href="#projects" class="hover:text-[#FFCC00] transition">Projects</a>
+      <a href="#board" class="hover:text-[#FFCC00] transition">Roster</a>
+    </div>
+    <button class="bg-[#7A0016] hover:bg-red-800 text-white px-5 py-2 rounded-full font-bold text-xs md:text-sm shadow-md border border-[#FFCC00]/30 transition-all active:scale-95 cursor-pointer">
+      Register for R4C
+    </button>
+  </nav>
 
-    function App() {
-      const [activeAvenue, setActiveAvenue] = useState('All');
+  {/* Hero Section */}
+  <header id="about" class="relative flex flex-col items-center justify-center text-center px-4 py-20 md:py-28 bg-gradient-to-b from-slate-950 to-slate-900 overflow-hidden">
+    <span class="text-[#FFCC00] uppercase tracking-[0.25em] font-black text-xs mb-6 bg-[#7A0016]/40 px-4 py-1.5 rounded-full border border-[#7A0016]/60">
+      Interact District 3220
+    </span>
+    <h1 class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight max-w-5xl mb-6 leading-[1.15]">
+      An Unparalleled Legacy of <br class="hidden md:inline" />
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFCC00] via-amber-400 to-[#FFCC00]">Leadership & Service</span>
+    </h1>
+    <p class="text-slate-400 text-base md:text-xl max-w-2xl text-balance mb-10 font-normal leading-relaxed">
+      "Inspiring change through action." Meet the leadership driving our historic operations forward.
+    </p>
+  </header>
 
-      const projectsData = [
-        {
-          title: "SPLISH SPLASH",
-          description: "Providing clean water infrastructure, filtering units, and structural renovations to schools lacking essential sanitary resources.",
-          avenue: "Community Service",
-          tag: "Infrastructure",
-          gradient: "from-[#7A0016] to-red-950"
-        },
-        {
-          title: "HOPE",
-          description: "A critical long-standing annual campaign offering clinical supplies, pediatric resources, and direct infrastructure relief to healthcare units.",
-          avenue: "Community Service",
-          tag: "Healthcare",
-          gradient: "from-amber-800 to-[#7A0016]"
-        },
-        {
-          title: "RHETORIK",
-          description: "The prominent premier inter-school public speaking championship fostering communication masters across the district.",
-          avenue: "Club Service",
-          tag: "Oratory",
-          gradient: "from-slate-800 to-slate-950"
-        },
-        {
-          title: "INTERCON",
-          description: "Internal sports encounters, ice-breaking programs, and leadership training camps designed to solidify member chemistry.",
-          avenue: "Club Service",
-          tag: "Bonding",
-          gradient: "from-blue-900 to-slate-950"
-        },
-        {
-          title: "ECO ACTION",
-          description: "Massive coastal cleanups, tree planting campaigns, and electronic waste recycling drives to build sustainability.",
-          avenue: "Green Life",
-          tag: "Environment",
-          gradient: "from-emerald-800 to-teal-950"
-        },
-        {
-          title: "GLOBAL BOUNDS",
-          description: "Cultural identity exchanges and collaborative international service missions executed with global twin clubs.",
-          avenue: "International Understanding",
-          tag: "Global",
-          gradient: "from-indigo-900 to-slate-950"
-        },
-        {
-          title: "RACE FOR CHANGE",
-          description: "The signature flagship fundraising walkathon and carnival driving massive socio-economic project financing.",
-          avenue: "Finance",
-          tag: "Fundraiser",
-          gradient: "from-amber-600 to-stone-900"
-        },
-        {
-          title: "VOICE OF ANANDA",
-          description: "A specialized visual digital content framework and storytelling platform amplifying youth community service impact.",
-          avenue: "Public Relations (PR)",
-          tag: "Media",
-          gradient: "from-pink-900 to-purple-950"
-        }
-      ];
+  {/* Avenues Segment */}
+  <section id="avenues" class="py-12 bg-slate-950/40 border-t border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-black tracking-tight mb-2">Our Operational Pillars</h2>
+        <p class="text-slate-400 text-sm max-w-xl mx-auto">The six foundational avenues driving targeted youth community transformation across Sri Lanka.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 text-center">
+        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 font-bold text-xs">Community Service</div>
+        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 font-bold text-xs">Club Service</div>
+        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 font-bold text-xs">Green Life</div>
+        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 font-bold text-xs">International Understanding</div>
+        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 font-bold text-xs">Finance</div>
+        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 font-bold text-xs">Public Relations (PR)</div>
+      </div>
+    </div>
+  </section>
+  <!-- Flagship Projects Section -->
+  <section id="projects" class="py-16 bg-slate-900 border-t border-slate-800/50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-2">Flagship Projects</h2>
+        <p class="text-slate-400 text-sm max-w-xl mx-auto">Signature initiatives engineered by the Interactors of Ananda College.</p>
+      </div>
 
-      const filteredProjects = activeAvenue === 'All' 
-        ? projectsData 
-        : projectsData.filter(proj => proj.avenue === activeAvenue);
-
-      return (
-        <div className="bg-slate-900 text-white min-h-screen font-sans selection:bg-[#FFCC00] selection:text-[#7A0016] scroll-smooth">
-          {/* Navigation */}
-          <nav className="flex justify-between items-center px-6 md:px-12 py-4 border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-[#7A0016] rounded-full flex items-center justify-center font-black text-white tracking-wider border border-[#FFCC00]/40 shadow-md">ICAC</div>
-              <span className="font-bold text-base md:text-lg tracking-wide hidden sm:inline">Interact Club of Ananda College</span>
-            </div>
-            <div className="hidden md:flex space-x-8 text-sm font-semibold tracking-wide text-slate-300">
-              <a href="#about" className="hover:text-[#FFCC00] transition">About</a>
-              <a href="#avenues" className="hover:text-[#FFCC00] transition">Avenues</a>
-              <a href="#projects" className="hover:text-[#FFCC00] transition">Projects</a>
-              <a href="#board" className="hover:text-[#FFCC00] transition">Roster</a>
-            </div>
-            <button className="bg-[#7A0016] hover:bg-red-800 text-white px-5 py-2 rounded-full font-bold text-xs md:text-sm shadow-md border border-[#FFCC00]/30 transition-all active:scale-95 cursor-pointer">
-              Register for R4C
-            </button>
-          </nav>
-
-          {/* Hero */}
-          <header id="about" className="relative flex flex-col items-center justify-center text-center px-4 py-20 md:py-28 bg-gradient-to-b from-slate-950 to-slate-900 overflow-hidden">
-            <span className="text-[#FFCC00] uppercase tracking-[0.25em] font-black text-xs mb-6 bg-[#7A0016]/40 px-4 py-1.5 rounded-full border border-[#7A0016]/60">
-              Interact District 3220
-            </span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight max-w-5xl mb-6 leading-[1.15]">
-              An Unparalleled Legacy of <br className="hidden md:inline" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFCC00] via-amber-400 to-[#FFCC00]">Leadership & Service</span>
-            </h1>
-            <p className="text-slate-400 text-base md:text-xl max-w-2xl text-balance mb-10 font-normal leading-relaxed">
-              "Inspiring change through action." Meet the leadership driving our historic operations forward.
-            </p>
-          </header>
-
-          {/* Avenues Tab Bar */}
-          <section id="avenues" className="py-12 bg-slate-950/40 border-t border-slate-800/60">
-            <div className="max-w-6xl mx-auto px-6">
-              <div className="text-center mb-10">
-                <h2 className="text-3xl font-black tracking-tight mb-2">Our Operational Pillars</h2>
-                <p className="text-slate-400 text-sm max-w-xl mx-auto">Select an Avenue below to see its active flagship initiatives updates.</p>
-              </div>
-              <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-                {['All', 'Community Service', 'Club Service', 'Green Life', 'International Understanding', 'Finance', 'Public Relations (PR)'].map((ave) => (
-                  <button
-                    key={ave}
-                    onClick={() => setActiveAvenue(ave)}
-                    className={`px-4 py-2 rounded-xl font-bold text-xs md:text-sm border transition-all cursor-pointer ${
-                      activeAvenue === ave 
-                        ? 'bg-[#7A0016] text-white border-[#FFCC00]/50 shadow-md scale-105' 
-                        : 'bg-slate-900 text-slate-400 border-slate-800 hover:border-slate-700'
-                    }`}
-                  >
-                    {ave}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </section>
-          {/* Dynamic Interactive Projects Showcase */}
-          <section id="projects" className="py-16 bg-slate-900 border-t border-slate-800/50">
-            <div className="max-w-6xl mx-auto px-6">
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
-                <div>
-                  <h2 className="text-2xl md:text-4xl font-black tracking-tight mb-2">
-                    Showing {activeAvenue === 'All' ? 'All Flagship' : activeAvenue} Projects
-                  </h2>
-                  <p className="text-slate-400 text-sm">
-                    Displaying {filteredProjects.length} active initiatives under this selection.
-                  </p>
-                </div>
-                {activeAvenue !== 'All' && (
-                  <button 
-                    onClick={() => setActiveAvenue('All')}
-                    className="mt-4 md:mt-0 text-xs font-bold text-[#FFCC00] bg-[#7A0016]/20 border border-[#7A0016]/40 px-4 py-2 rounded-lg hover:bg-[#7A0016]/40 transition cursor-pointer"
-                  >
-                    Clear Filter ×
-                  </button>
-                )}
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredProjects.map((project, idx) => (
-                  <div 
-                    key={idx} 
-                    className="bg-slate-950 border border-slate-800/80 rounded-2xl overflow-hidden hover:border-slate-700/60 shadow-md transition-all flex flex-col group"
-                  >
-                    <div className={`h-40 bg-gradient-to-tr ${project.gradient} flex items-center justify-center relative p-4 shrink-0`}>
-                      <span className="absolute bottom-3 left-3 bg-slate-900/90 backdrop-blur text-[#FFCC00] text-[10px] font-black tracking-wider uppercase px-2.5 py-1 rounded-md border border-slate-700">
-                        {project.tag}
-                      </span>
-                      <span className="text-white font-black text-xl tracking-wider text-center group-hover:scale-105 transition-transform">
-                        {project.title}
-                  </span>
-                </div>
-                <div className="p-5 flex flex-col justify-between h-full">
-                  <div>
-                    <span className="text-[11px] font-bold text-[#FFCC00]/80 tracking-wide uppercase block mb-1">
-                      {project.avenue}
-                    </span>
-                    <p className="text-slate-400 text-xs md:text-sm leading-relaxed">
-                      {project.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Executive Committee */}
-          <section id="board" className="py-20 bg-slate-950/40 border-t border-slate-800/60">
-            <div className="max-w-6xl mx-auto px-6">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4">Executive Committee</h2>
-                <p className="text-slate-400 max-w-xl mx-auto text-sm">The primary pillars running core operations and executive strategy for ICAC.</p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
-                {[
-                  { name: "Int. Kemith Rajapakse", role: "President", highlight: true },
-                  { name: "Int. Gagul Jayawardena", role: "Secretary" },
-                  { name: "Int. Nathan Malwana", role: "Treasurer" },
-                  { name: "Int. Nethuka Dahanayaka", role: "Vice President" },
-                  { name: "Int. Yasith Wickramasinghe", role: "Vice President" },
-                  { name: "Int. Sesath Cabbral", role: "Assistant Secretary" },
-                  { name: "Int. Nilush Liyanage", role: "Assistant Treasurer" },
-                  { name: "Int. Nethula Edirimanne", role: "Sergeant at Arms" },
-                  { name: "Int. Hiruja Wanniarachchi", role: "Sergeant at Arms" },
-                  { name: "Int. Kaviru Thineth", role: "Editor" },
-                  { name: "Int. Ronal Jayarathna", role: "Head of Directors" }
-                ].map((member, i) => (
-                  <div key={i} className={`p-6 rounded-2xl border text-center transition-all ${
-                    member.highlight 
-                      ? 'bg-slate-900 border-[#7A0016] shadow-lg shadow-[#7A0016]/10' 
-                      : 'bg-slate-900/60 border-slate-800/80 hover:border-slate-700'
-                  }`}>
-                    <img 
-                      src="https://unsplash.com" 
-                      alt={member.name} 
-                      className={`w-24 h-24 rounded-full mx-auto mb-4 object-cover border ${
-                        member.highlight ? 'border-[#FFCC00]/60 shadow-md' : 'border-slate-700'
-                      }`}
-                    />
-                    <h4 className="font-bold text-base text-slate-100">{member.name}</h4>
-                    <p className={`text-xs font-bold tracking-wider uppercase mt-1.5 ${
-                      member.highlight ? 'text-[#FFCC00]' : 'text-slate-400'
-                    }`}>{member.role}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Director Board */}
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-4">Director Board</h2>
-                <p className="text-slate-400 max-w-xl mx-auto text-sm">Avenue managers engineering targeted local and international projects.</p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[
-                  { name: "Int. Gayanuka Fernando", role: "Director of Finance" },
-                  { name: "Int. Thinura Jayasinghe", role: "Co-Director of Community Service" },
-                  { name: "Int. Chithila Wanniarachchi", role: "Co-Director of Community Service" },
-                  { name: "Int. Susith Gallage", role: "Co-Director of Club Service" },
-                  { name: "Int. Binul De Silva", role: "Co-Director of Club Service" },
-                  { name: "Int. Javinu Sewhas", role: "Co-Director of Greenlife" },
-                  { name: "Int. Sanuth Dulwan", role: "Co-Director of Greenlife" },
-                  { name: "Int. Damsas Jayasinghe", role: "Co-Director of International Understanding" },
-                  { name: "Int. Onitha Thilakarathne", role: "Co-Director of International Understanding" },
-                  { name: "Int. Binara Supun", role: "Co-Director of Public Relations" },
-                  { name: "Int. Ahas Karunaratne", role: "Co-Director of Public Relations" }
-                ].map((dir, i) => (
-                  <div key={i} className="bg-slate-900/40 border border-slate-800/80 p-5 rounded-xl flex items-center space-x-4 hover:border-slate-700 transition">
-                    <img 
-                      src="https://unsplash.com" 
-                      alt={dir.name} 
-                      className="w-14 h-14 rounded-full object-cover border border-slate-700 bg-slate-800 shrink-0" 
-                    />
-                    <div>
-                      <h5 className="font-bold text-sm text-slate-200">{dir.name}</h5>
-                      <p className="text-[11px] text-[#FFCC00]/80 font-semibold uppercase tracking-wider mt-0.5">{dir.role}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Footer */}
-          <footer className="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500 font-medium">
-            &copy; {new Date().getFullYear()} Interact Club of Ananda College. All Rights Reserved.
-          </footer>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-slate-950 border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col">
+          <div class="h-32 bg-gradient-to-tr from-[#7A0016] to-red-950 flex items-center justify-center relative p-4">
+            <span class="absolute bottom-3 left-3 bg-slate-900/90 backdrop-blur text-[#FFCC00] text-[10px] font-black tracking-wider uppercase px-2.5 py-1 rounded-md border border-slate-700">Community Service</span>
+            <span class="text-white font-black text-lg tracking-wider">SPLISH SPLASH</span>
+          </div>
+          <div class="p-5"><p class="text-slate-400 text-xs md:text-sm leading-relaxed">Providing clean water infrastructure and structural renovations to schools lacking essential sanitary resources.</p></div>
         </div>
-      );
-    }
 
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(React.createElement(App));
-  </script>
+        <div class="bg-slate-950 border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col">
+          <div class="h-32 bg-gradient-to-tr from-amber-800 to-[#7A0016] flex items-center justify-center relative p-4">
+            <span class="absolute bottom-3 left-3 bg-slate-900/90 backdrop-blur text-[#FFCC00] text-[10px] font-black tracking-wider uppercase px-2.5 py-1 rounded-md border border-slate-700">Community Service</span>
+            <span class="text-white font-black text-lg tracking-wider">HOPE</span>
+          </div>
+          <div class="p-5"><p class="text-slate-400 text-xs md:text-sm leading-relaxed">Annual healthcare relief campaign offering essential medical equipment and direct infrastructure support to state clinics.</p></div>
+        </div>
+
+        <div class="bg-slate-950 border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col">
+          <div class="h-32 bg-gradient-to-tr from-slate-800 to-slate-950 flex items-center justify-center relative p-4">
+            <span class="absolute bottom-3 left-3 bg-slate-900/90 backdrop-blur text-[#FFCC00] text-[10px] font-black tracking-wider uppercase px-2.5 py-1 rounded-md border border-slate-700">Club Service</span>
+            <span class="text-white font-black text-lg tracking-wider">RHETORIK</span>
+          </div>
+          <div class="p-5"><p class="text-slate-400 text-xs md:text-sm leading-relaxed">The premier inter-school oratory championship creating massive professional communication pathways across the district.</p></div>
+        </div>
+
+        <div class="bg-slate-950 border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col">
+          <div class="h-32 bg-gradient-to-tr from-blue-900 to-slate-950 flex items-center justify-center relative p-4">
+            <span class="absolute bottom-3 left-3 bg-slate-900/90 backdrop-blur text-[#FFCC00] text-[10px] font-black tracking-wider uppercase px-2.5 py-1 rounded-md border border-slate-700">Club Service</span>
+            <span class="text-white font-black text-lg tracking-wider">INTERCON</span>
+          </div>
+          <div class="p-5"><p class="text-slate-400 text-xs md:text-sm leading-relaxed">Internal bonding games, sports encounters, and physical engagement training programs designed to unify member chemistry.</p></div>
+        </div>
+
+        <div class="bg-slate-950 border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col">
+          <div class="h-32 bg-gradient-to-tr from-emerald-800 to-teal-950 flex items-center justify-center relative p-4">
+            <span class="absolute bottom-3 left-3 bg-slate-900/90 backdrop-blur text-[#FFCC00] text-[10px] font-black tracking-wider uppercase px-2.5 py-1 rounded-md border border-slate-700">Green Life</span>
+            <span class="text-white font-black text-lg tracking-wider">ECO ACTION</span>
+          </div>
+          <div class="p-5"><p class="text-slate-400 text-xs md:text-sm leading-relaxed">Massive beach cleaning, tree planting campaigns, and electronic waste processing drives building ecological sustainability.</p></div>
+        </div>
+
+        <div class="bg-slate-950 border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col">
+          <div class="h-32 bg-gradient-to-tr from-indigo-900 to-slate-950 flex items-center justify-center relative p-4">
+            <span class="absolute bottom-3 left-3 bg-slate-900/90 backdrop-blur text-[#FFCC00] text-[10px] font-black tracking-wider uppercase px-2.5 py-1 rounded-md border border-slate-700">International Understanding</span>
+            <span class="text-white font-black text-lg tracking-wider">GLOBAL BOUNDS</span>
+          </div>
+          <div class="p-5"><p class="text-slate-400 text-xs md:text-sm leading-relaxed">Cultural exchange programs and collaborative digital community campaigns executed with global Twin Clubs.</p></div>
+        </div>
+
+        <div class="bg-slate-950 border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col">
+          <div class="h-32 bg-gradient-to-tr from-amber-600 to-stone-900 flex items-center justify-center relative p-4">
+            <span class="absolute bottom-3 left-3 bg-slate-900/90 backdrop-blur text-[#FFCC00] text-[10px] font-black tracking-wider uppercase px-2.5 py-1 rounded-md border border-slate-700">Finance</span>
+            <span class="text-white font-black text-lg tracking-wider">RACE FOR CHANGE</span>
+          </div>
+          <div class="p-5"><p class="text-slate-400 text-xs md:text-sm leading-relaxed">The signature walkathon and massive open carnival raising core funds to power the club's high-scale community operations.</p></div>
+        </div>
+
+        <div class="bg-slate-950 border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col">
+          <div class="h-32 bg-gradient-to-tr from-pink-900 to-purple-950 flex items-center justify-center relative p-4">
+            <span class="absolute bottom-3 left-3 bg-slate-900/90 backdrop-blur text-[#FFCC00] text-[10px] font-black tracking-wider uppercase px-2.5 py-1 rounded-md border border-slate-700">Public Relations (PR)</span>
+            <span class="text-white font-black text-lg tracking-wider">VOICE OF ANANDA</span>
+          </div>
+          <div class="p-5"><p class="text-slate-400 text-xs md:text-sm leading-relaxed">Digital media coverage campaigns and creative visual storytelling modules showcasing public youth action projects.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Complete Official Roster -->
+  <section id="board" class="py-20 bg-slate-950/40 border-t border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <!-- Executive Committee Layout -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-4">Executive Committee</h2>
+        <p class="text-slate-400 max-w-xl mx-auto text-sm">The primary pillars running core operations and executive strategy for ICAC.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
+        <div class="p-6 rounded-2xl border text-center bg-slate-900 border-[#7A0016] shadow-lg shadow-[#7A0016]/10">
+          <img src="https://unsplash.com" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border border-[#FFCC00]/60 shadow-md">
+          <h4 class="font-bold text-base text-slate-100">Int. Kemith Rajapakse</h4>
+          <p class="text-xs font-bold tracking-wider uppercase mt-1.5 text-[#FFCC00]">President</p>
+        </div>
+        <div class="p-6 rounded-2xl border text-center bg-slate-900/60 border-slate-800/80 hover:border-slate-700">
+          <img src="https://unsplash.com" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border border-slate-700">
+          <h4 class="font-bold text-base text-slate-100">Int. Gagul Jayawardena</h4>
+          <p class="text-xs font-bold tracking-wider uppercase mt-1.5 text-slate-400">Secretary</p>
+        </div>
+        <div class="p-6 rounded-2xl border text-center bg-slate-900/60 border-slate-800/80 hover:border-slate-700">
+          <img src="https://unsplash.com" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border border-slate-700">
+          <h4 class="font-bold text-base text-slate-100">Int. Nathan Malwana</h4>
+          <p class="text-xs font-bold tracking-wider uppercase mt-1.5 text-slate-400">Treasurer</p>
+        </div>
+        <div class="p-6 rounded-2xl border text-center bg-slate-900/60 border-slate-800/80 hover:border-slate-700">
+          <img src="https://unsplash.com" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border border-slate-700">
+          <h4 class="font-bold text-base text-slate-100">Int. Nethuka Dahanayaka</h4>
+          <p class="text-xs font-bold tracking-wider uppercase mt-1.5 text-slate-400">Vice President</p>
+        </div>
+        <div class="p-6 rounded-2xl border text-center bg-slate-900/60 border-slate-800/80 hover:border-slate-700">
+          <img src="https://unsplash.com" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border border-slate-700">
+          <h4 class="font-bold text-base text-slate-100">Int. Yasith Wickramasinghe</h4>
+          <p class="text-xs font-bold tracking-wider uppercase mt-1.5 text-slate-400">Vice President</p>
+        </div>
+        <div class="p-6 rounded-2xl border text-center bg-slate-900/60 border-slate-800/80 hover:border-slate-700">
+          <img src="https://unsplash.com" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border border-slate-700">
+          <h4 class="font-bold text-base text-slate-100">Int. Sesath Cabbral</h4>
+          <p class="text-xs font-bold tracking-wider uppercase mt-1.5 text-slate-400">Assistant Secretary</p>
+        </div>
+        <div class="p-6 rounded-2xl border text-center bg-slate-900/60 border-slate-800/80 hover:border-slate-700">
+          <img src="https://unsplash.com" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border border-slate-700">
+          <h4 class="font-bold text-base text-slate-100">Int. Nilush Liyanage</h4>
+          <p class="text-xs font-bold tracking-wider uppercase mt-1.5 text-slate-400">Assistant Treasurer</p>
+        </div>
+        <div class="p-6 rounded-2xl border text-center bg-slate-900/60 border-slate-800/80 hover:border-slate-700">
+          <img src="https://unsplash.com" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border border-slate-700">
+          <h4 class="font-bold text-base text-slate-100">Int. Nethula Edirimanne</h4>
+          <p class="text-xs font-bold tracking-wider uppercase mt-1.5 text-slate-400">Sergeant at Arms</p>
+        </div>
+        <div class="p-6 rounded-2xl border text-center bg-slate-900/60 border-slate-800/80 hover:border-slate-700">
+          <img src="https://unsplash.com" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border border-slate-700">
+          <h4 class="font-bold text-base text-slate-100">Int. Hiruja Wanniarachchi</h4>
+          <p class="text-xs font-bold tracking-wider uppercase mt-1.5 text-slate-400">Sergeant at Arms</p>
+        </div>
+        <div class="p-6 rounded-2xl border text-center bg-slate-900/60 border-slate-800/80 hover:border-slate-700">
+          <img src="https://unsplash.com" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border border-slate-700">
+          <h4 class="font-bold text-base text-slate-100">Int. Kaviru Thineth</h4>
+          <p class="text-xs font-bold tracking-wider uppercase mt-1.5 text-slate-400">Editor</p>
+        </div>
+        <div class="p-6 rounded-2xl border text-center bg-slate-900/60 border-slate-800/80 hover:border-slate-700">
+          <img src="https://unsplash.com" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border border-slate-700">
+          <h4 class="font-bold text-base text-slate-100">Int. Ronal Jayarathna</h4>
+          <p class="text-xs font-bold tracking-wider uppercase mt-1.5 text-slate-400">Head of Directors</p>
+        </div>
+      </div>
+      <!-- Director Board Layout Grid -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-4">Director Board</h2>
+        <p class="text-slate-400 max-w-xl mx-auto text-sm">Avenue managers engineering targeted local and international projects.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-slate-900/40 border border-slate-800/80 p-5 rounded-xl flex items-center space-x-4">
+          <img src="https://unsplash.com" class="w-12 h-12 rounded-full object-cover border border-slate-700">
+          <div><h5 class="font-bold text-sm text-slate-200">Int. Gayanuka Fernando</h5><p class="text-[11px] text-[#FFCC00]/80 font-semibold uppercase tracking-wider mt-0.5">Director of Finance</p></div>
+        </div>
+        <div class="bg-slate-900/40 border border-slate-800/80 p-5 rounded-xl flex items-center space-x-4">
+          <img src="https://unsplash.com" class="w-12 h-12 rounded-full object-cover border border-slate-700">
+          <div><h5 class="font-bold text-sm text-slate-200">Int. Thinura Jayasinghe</h5><p class="text-[11px] text-[#FFCC00]/80 font-semibold uppercase tracking-wider mt-0.5">Co-Director of Community Service</p></div>
+        </div>
+        <div class="bg-slate-900/40 border border-slate-800/80 p-5 rounded-xl flex items-center space-x-4">
+          <img src="https://unsplash.com" class="w-12 h-12 rounded-full object-cover border border-slate-700">
+          <div><h5 class="font-bold text-sm text-slate-200">Int. Chithila Wanniarachchi</h5><p class="text-[11px] text-[#FFCC00]/80 font-semibold uppercase tracking-wider mt-0.5">Co-Director of Community Service</p></div>
+        </div>
+        <div class="bg-slate-900/40 border border-slate-800/80 p-5 rounded-xl flex items-center space-x-4">
+          <img src="https://unsplash.com" class="w-12 h-12 rounded-full object-cover border border-slate-700">
+          <div><h5 class="font-bold text-sm text-slate-200">Int. Susith Gallage</h5><p class="text-[11px] text-[#FFCC00]/80 font-semibold uppercase tracking-wider mt-0.5">Co-Director of Club Service</p></div>
+        </div>
+        <div class="bg-slate-900/40 border border-slate-800/80 p-5 rounded-xl flex items-center space-x-4">
+          <img src="https://unsplash.com" class="w-12 h-12 rounded-full object-cover border border-slate-700">
+          <div><h5 class="font-bold text-sm text-slate-200">Int. Binul De Silva</h5><p class="text-[11px] text-[#FFCC00]/80 font-semibold uppercase tracking-wider mt-0.5">Co-Director of Club Service</p></div>
+        </div>
+        <div class="bg-slate-900/40 border border-slate-800/80 p-5 rounded-xl flex items-center space-x-4">
+          <img src="https://unsplash.com" class="w-12 h-12 rounded-full object-cover border border-slate-700">
+          <div><h5 class="font-bold text-sm text-slate-200">Int. Javinu Sewhas</h5><p class="text-[11px] text-[#FFCC00]/80 font-semibold uppercase tracking-wider mt-0.5">Co-Director of Greenlife</p></div>
+        </div>
+        <div class="bg-slate-900/40 border border-slate-800/80 p-5 rounded-xl flex items-center space-x-4">
+          <img src="https://unsplash.com" class="w-12 h-12 rounded-full object-cover border border-slate-700">
+          <div><h5 class="font-bold text-sm text-slate-200">Int. Sanuth Dulwan</h5><p class="text-[11px] text-[#FFCC00]/80 font-semibold uppercase tracking-wider mt-0.5">Co-Director of Greenlife</p></div>
+        </div>
+        <div class="bg-slate-900/40 border border-slate-800/80 p-5 rounded-xl flex items-center space-x-4">
+          <img src="https://unsplash.com" class="w-12 h-12 rounded-full object-cover border border-slate-700">
+          <div><h5 class="font-bold text-sm text-slate-200">Int. Damsas Jayasinghe</h5><p class="text-[11px] text-[#FFCC00]/80 font-semibold uppercase tracking-wider mt-0.5">Co-Director of International Understanding</p></div>
+        </div>
+        <div class="bg-slate-900/40 border border-slate-800/80 p-5 rounded-xl flex items-center space-x-4">
+          <img src="https://unsplash.com" class="w-12 h-12 rounded-full object-cover border border-slate-700">
+          <div><h5 class="font-bold text-sm text-slate-200">Int. Onitha Thilakarathne</h5><p class="text-[11px] text-[#FFCC00]/80 font-semibold uppercase tracking-wider mt-0.5">Co-Director of International Understanding</p></div>
+        </div>
+        <div class="bg-slate-900/40 border border-slate-800/80 p-5 rounded-xl flex items-center space-x-4">
+          <img src="https://unsplash.com" class="w-12 h-12 rounded-full object-cover border border-slate-700">
+          <div><h5 class="font-bold text-sm text-slate-200">Int. Binara Supun</h5><p class="text-[11px] text-[#FFCC00]/80 font-semibold uppercase tracking-wider mt-0.5">Co-Director of Public Relations</p></div>
+        </div>
+        <div class="bg-slate-900/40 border border-slate-800/80 p-5 rounded-xl flex items-center space-x-4">
+          <img src="https://unsplash.com" class="w-12 h-12 rounded-full object-cover border border-slate-700">
+          <div><h5 class="font-bold text-sm text-slate-200">Int. Ahas Karunaratne</h5><p class="text-[11px] text-[#FFCC00]/80 font-semibold uppercase tracking-wider mt-0.5">Co-Director of Public Relations</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500 font-medium">
+    &copy; 2026 Interact Club of Ananda College. All Rights Reserved.
+  </footer>
+
 </body>
 </html>
