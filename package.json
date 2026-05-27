@@ -4,6 +4,6 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "mkdir -p dist && cp index.html App.jsx dist/"
+    "build": "mkdir -p public && cp index.html App.jsx public/"
   }
 }
